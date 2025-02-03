@@ -1,0 +1,117 @@
+<!--/*
+ ******************************************************************************************
+ * @Name of the LWC    :  rlatedOpportunity.html
+ * @ Description       :  To get opportunity records and to update stage field 
+ * @ Author            :  Taimoor Shaik
+ * @ Created Date      :  31-01-2024
+ ******************************************************************************************
+ * @ Last Modified By         :  Taimoor Shaik
+ * @ Last Modified On         :  31-01-2024
+ * @ Modification Description : Added extra functionality
+ ******************************************************************************************
+ -->
+<template>
+    <lightning-card title="Related Opportunities" icon-name="standard:opportunity">
+        <template if:true={opportunities.length}>
+            <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_fixed-layout">
+                <thead>
+                    <tr>
+                        <th style="width: 10%;">
+                            <div class="slds-truncate" title="Select">Select</div>
+                        </th>
+                        <th style="width: 30%;">
+                            <div class="slds-truncate" title="Opportunity Name">Opportunity Name</div>
+                        </th>
+                        <th style="width: 30%;">
+                            <div class="slds-truncate" title="Stage">Stage</div>
+                        </th>
+                        <th style="width: 30%;">
+                            <div class="slds-truncate" title="Amount">Amount</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={paginatedOpportunities} for:item="opportunity">
+                        <tr key={opportunity.Id}>
+                            <td>
+                                <lightning-input class="checkboxes" type="checkbox" data-id={opportunity.Id} onchange={handleCheckboxChange}></lightning-input>
+                            </td>
+                            <td>
+                                <a href="javascript:void(0);" data-id={opportunity.Id} onclick={handleOpportunityClick}>{opportunity.Name}</a>
+                            </td>
+                            <td>
+                                <div class="slds-truncate" title={opportunity.StageName}>{opportunity.StageName}</div>
+                            </td>
+                            <td>
+                                <div class="slds-truncate" title={opportunity.Amount}>{opportunity.Amount}</div>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+
+            <!-- Pagination Controls -->
+            <div class="slds-m-top_medium slds-grid slds-grid_align-center">
+                <lightning-button label="Previous" onclick={previousPage} disabled={isFirstPage}></lightning-button>
+                <span class="slds-m-horizontal_medium">Page {currentPage} of {totalPages}</span>
+                <lightning-button label="Next" onclick={nextPage} disabled={isLastPage}></lightning-button>
+            </div>
+
+            <div class="slds-m-top_medium">
+                <lightning-button label="Update Stage" variant="brand" onclick={handleUpdateStage}></lightning-button>
+            </div>
+        </template>
+
+        <template if:true={error}>
+            <p class="slds-text-color_error">Error fetching opportunities: {error.body.message}</p>
+        </template>
+
+        <template if:false={opportunities.length}>
+            <p>No opportunities found for this account.</p>
+        </template>
+    </lightning-card>
+
+    <!-- Modal for Stage Update -->
+    <template if:true={showModal}>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium">Select Stage</h2>
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="Close"></lightning-icon>
+                    </button>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-combobox label="Stage" value={selectedStage} options={stageOptions} onchange={handleStageChange}></lightning-combobox>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button label="Cancel" onclick={closeModal}></lightning-button>
+                    <lightning-button label="Confirm" variant="brand" onclick={confirmStageUpdate}></lightning-button>
+                </footer>
+            </div>
+        </section>
+    </template>
+
+    <!-- Confirmation Modal -->
+    <template if:true={showConfirmationModal}>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium">Confirm Stage Update</h2>
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" onclick={closeConfirmationModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="Close"></lightning-icon>
+                    </button>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <p>Are you sure you want to update the stage for selected opportunities?</p>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button label="Cancel" onclick={closeConfirmationModal}></lightning-button>
+                    <lightning-button label="Update" variant="brand" onclick={applyStageUpdate}></lightning-button>
+                </footer>
+            </div>
+        </section>
+    </template>
+</template>

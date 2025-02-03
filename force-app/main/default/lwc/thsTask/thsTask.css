@@ -1,0 +1,149 @@
+header{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(29 29 187);
+    color: white;
+  }
+  .name{
+    color:white;
+  }
+  .logo{
+    height: 90px;
+  }
+  footer {
+    font-size: 0.85rem;
+    background-color: rgb(17, 17, 66);
+    color: #ffffff;
+    width: 100%;
+  }
+  
+  footer p {
+    margin: 0.25rem 0;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .slds-box {
+      padding: 1rem;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    footer {
+      font-size: 0.75rem;
+     
+    }
+  }
+    .list-item-space{
+      margin-right: 20px;
+    }
+    .abc{
+        color: white;
+    }
+    .info-section {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+    .about-application,
+    .requirements {
+        flex: 1;
+        margin: 0 1rem;
+    }
+    .steps-section {
+        padding: 1rem;
+    }
+  
+    .custom-card {
+        border-radius: 12px;
+        border: 1px solid #ddd;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+     
+      .card-small {
+        width: 40%; /* Smaller width for Card 1 */
+        height: 250px;
+      }
+     
+      .card-large {
+        width: 60%; /* Larger width for Card 2 */
+        height: 250px;
+      }
+     
+      .card-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin: 1rem; /* Add margin around the title */
+      }
+     
+      .icon-container {
+        flex-shrink: 0; /* Prevent icon from shrinking */
+       
+      }
+     
+      .icon-blue lightning-icon {
+        fill: #0070d2; /* Blue color for icons */
+      }
+  
+      .icon-blue {
+        color: #0070d2; /* Blue color for SVG icons */
+      }
+  
+      .slds-grid > div {
+        height: auto; /* Ensure grid items match the tallest card */
+      }
+  
+  
+      .custom-step-container {
+        border: 1px solid #d8dde6;
+        border-radius: 4px;
+        padding: 16px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Ensures content is spaced evenly */
+        height: 100%; /* Makes all containers uniform in height */
+    }
+     
+    .step-content {
+      margin-top: 16px;
+      color: #070707; /* Default content text color */
+    }
+     
+    .step-content.white {
+        color: white; /* Override for content with a white header */
+    }
+     
+    .blue-background {
+        background-color: #136aec; /* Blue background for sections */
+    }
+     
+    .white-background {
+        background-color: white; /* White background for sections */
+    }
+     
+     
+    lightning-layout-item {
+        padding: 10px; /* Add padding between layout items */
+        height: 300px; /* Set a fixed height to ensure equal heights for all items */
+    }
+    .kfc{
+      position: relative;
+      left: 216px;
+      bottom: 184px;
+    }
+    .card2{
+      width: 200px;
+    height: 212px;
+    position: relative;
+    top: 22px;
+    }
+    .ufc{
+      position: relative;
+      right: 11px;
+    }

@@ -1,0 +1,35 @@
+<template>
+    <lightning-card title="Opportunities" icon-name="standard:opportunity">
+        <template if:true={opportunities}>
+        <template for:each={opportunities} for:item="opportunity">
+        <div key={opportunity.Id} class="slds-m-around_small">
+        <lightning-layout>
+        <lightning-layout-item>
+        <a 
+                                        href="javascript:void(0)" 
+                                        data-id={opportunity.Id} 
+                                        onclick={handleNavigate}>
+                                        {opportunity.Name}
+        </a>
+        </lightning-layout-item>
+        <lightning-layout-item>
+        <span>Stage: {opportunity.StageName}</span>
+        </lightning-layout-item>
+        <lightning-layout-item>
+        <span>Close Date: {opportunity.CloseDate}</span>
+        </lightning-layout-item>
+        <lightning-layout-item>
+        <span>Amount: {opportunity.Amount}</span>
+        </lightning-layout-item>
+        </lightning-layout>
+        </div>
+        </template>
+        </template>
+        <template if:true={error}>
+        <p class="slds-text-color_error">{error}</p>
+        </template>
+        <template if:false={opportunities}>
+        <p>No opportunities found.</p>
+        </template>
+        </lightning-card>
+</template>

@@ -1,0 +1,256 @@
+<template>
+    <div class="slds-box slds-theme_default">
+        <div class="slds-grid slds-wrap slds-gutters">
+            <div class="slds-col slds-size_1-of-3">
+                <label class="slds-form-element__label" for="title">Title*</label>
+                <select class="slds-select" id="title" data-field="title__c" onchange={handleChange} required>
+                    <option value="">-- Select --</option>
+                    <template for:each={picklistValues.title__c} for:item="option">
+                        <option key={option.value} value={option.value}>{option.label}</option>
+                    </template>
+                </select>
+                <template if:true={formErrors.title__c}>
+                    <div class="slds-text-color_error">{formErrors.title__c}</div>
+                </template>
+            </div>
+
+            <div class="slds-col slds-size_1-of-3">
+                <label class="slds-form-element__label" for="firstName">First Name*</label>
+                <input
+                    type="text"
+                    id="firstName"
+                    class="slds-input"
+                    data-field="First_Name__c"
+                    onchange={handleChange}
+                    required
+                />
+                <template if:true={formErrors.First_Name__c}>
+                    <div class="slds-text-color_error">{formErrors.First_Name__c}</div>
+                </template>
+            </div>
+
+            <div class="slds-col slds-size_1-of-3">
+                <label class="slds-form-element__label" for="surname">Surname*</label>
+                <input
+                    type="text"
+                    id="surname"
+                    class="slds-input"
+                    data-field="Surname__c"
+                    onchange={handleChange}
+                    required
+                />
+                <template if:true={formErrors.Surname__c}>
+                    <div class="slds-text-color_error">{formErrors.Surname__c}</div>
+                </template>
+            </div>
+
+            <div class="slds-col slds-size_1-of-2">
+                <label class="slds-form-element__label" for="middlename">Middle Name*</label>
+                <input
+                    type="text"
+                    id="middlename"
+                    class="slds-input"
+                    data-field="Middle_Name__c"
+                    onchange={handleChange}
+                    required
+                />
+                <template if:true={formErrors.Middle_Name__c}>
+                    <div class="slds-text-color_error">{formErrors.Middle_Name__c}</div>
+                </template>
+            </div>
+
+            <div class="slds-col slds-size_1-of-2">
+                <label class="slds-form-element__label" for="formername">Former or Maiden Name*</label>
+                <select class="slds-select" id="formername" data-field="former_name_or_maiden_name__c" onchange={handleChange} required>
+                    <option value="">-- Select --</option>
+                    <template for:each={picklistValues.former_name_or_maiden_name__c} for:item="option">
+                        <option key={option.value} value={option.value}>{option.label}</option>
+                    </template>
+                </select>
+                <template if:true={formErrors.former_name_or_maiden_name__c}>
+                    <div class="slds-text-color_error">{formErrors.former_name_or_maiden_name__c}</div>
+                </template>
+            </div>
+
+            <div class="slds-col slds-size_1-of-2">
+                <label class="slds-form-element__label" for="othername">Other Name*</label>
+                <select class="slds-select" id="othername" data-field="other_name__c" onchange={handleChange} required>
+                    <option value="">-- Select --</option>
+                    <template for:each={picklistValues.other_name__c} for:item="option">
+                        <option key={option.value} value={option.value}>{option.label}</option>
+                    </template>
+                </select>
+                <template if:true={formErrors.other_name__c}>
+                    <div class="slds-text-color_error">{formErrors.other_name__c}</div>
+                </template>
+            </div>
+
+            <div class="slds-col slds-size_1-of-2">
+                <label class="slds-form-element__label" for="otherFirstName">Other First Name*</label>
+                <input
+                    type="text"
+                    id="otherFirstName"
+                    class="slds-input"
+                    data-field="Other_First_Name__c"
+                    onchange={handleChange}
+                    required
+                />
+                <template if:true={formErrors.Other_First_Name__c}>
+                    <div class="slds-text-color_error">{formErrors.Other_First_Name__c}</div>
+                </template>
+            </div>
+
+            
+            <div class="slds-col slds-size_1-of-2">
+                <label class="slds-form-element__label" for="gender">Gender*</label>
+                <select class="slds-select" id="gender" data-field="gender__c" onchange={handleChange} required>
+                    <option value="">-- Select --</option>
+                    <template for:each={picklistValues.gender__c} for:item="option">
+                        <option key={option.value} value={option.value}>{option.label}</option>
+                    </template>
+                </select>
+                <template if:true={formErrors.gender__c}>
+                    <div class="slds-text-color_error">{formErrors.gender__c}</div>
+                </template>
+            </div>
+
+          
+            <div class="slds-col slds-size_1-of-2">
+                <label class="slds-form-element__label" for="dob">Date of Birth*</label>
+                <input
+                    type="date"
+                    id="dob"
+                    class="slds-input"
+                    data-field="Date_of_Birth__c"
+                    onchange={handleChange}
+                    required
+                />
+                <template if:true={formErrors.Date_of_Birth__c}>
+                    <div class="slds-text-color_error">{formErrors.Date_of_Birth__c}</div>
+                </template>
+            </div>
+
+           
+            <div class="slds-col slds-size_1-of-2">
+                <label class="slds-form-element__label" for="maritalStatus">Marital Status*</label>
+                <select class="slds-select" id="maritalStatus" data-field="marital_status__c" onchange={handleChange} required>
+                    <option value="">-- Select --</option>
+                    <template for:each={picklistValues.marital_status__c} for:item="option">
+                        <option key={option.value} value={option.value}>{option.label}</option>
+                    </template>
+                </select>
+                <template if:true={formErrors.marital_status__c}>
+                    <div class="slds-text-color_error">{formErrors.marital_status__c}</div>
+                </template>
+            </div>
+
+           
+            <div class="slds-col slds-size_1-of-2">
+                <label class="slds-form-element__label" for="countryOfBirth">Country of Birth*</label>
+                <select class="slds-select" id="countryOfBirth" data-field="country_of_birth__c" onchange={handleChange} required>
+                    <option value="">-- Select --</option>
+                    <template for:each={picklistValues.country_of_birth__c} for:item="option">
+                        <option key={option.value} value={option.value}>{option.label}</option>
+                    </template>
+                </select>
+                <template if:true={formErrors.country_of_birth__c}>
+                    <div class="slds-text-color_error">{formErrors.country_of_birth__c}</div>
+                </template>
+            </div>
+
+            <div class="slds-col slds-size_1-of-2">
+                <label class="slds-form-element__label" for="townOfBirth">Town of Birth*</label>
+                <select class="slds-select" id="townOfBirth" data-field="town_city_of_birth__c" onchange={handleChange} required>
+                    <option value="">-- Select --</option>
+                    <template for:each={picklistValues.town_city_of_birth__c} for:item="option">
+                        <option key={option.value} value={option.value}>{option.label}</option>
+                    </template>
+                </select>
+                <template if:true={formErrors.town_city_of_birth__c}>
+                    <div class="slds-text-color_error">{formErrors.town_city_of_birth__c}</div>
+                </template>
+            </div>
+
+            
+            <div class="slds-col slds-size_1-of-2">
+                <label class="slds-form-element__label" for="countryOfResidence">Country of Residence*</label>
+                <select class="slds-select" id="countryOfResidence" data-field="country_of_residence__c" onchange={handleChange} required>
+                    <option value="">-- Select --</option>
+                    <template for:each={picklistValues.country_of_residence__c} for:item="option">
+                        <option key={option.value} value={option.value}>{option.label}</option>
+                    </template>
+                </select>
+                <template if:true={formErrors.country_of_residence__c}>
+                    <div class="slds-text-color_error">{formErrors.country_of_residence__c}</div>
+                </template>
+            </div>
+
+           
+            <div class="slds-col slds-size_1-of-2">
+                <label class="slds-form-element__label" for="primaryNationality">Primary Nationality*</label>
+                <select class="slds-select" id="primaryNationality" data-field="primary_contact_of_nationality__c" onchange={handleChange} required>
+                    <option value="">-- Select --</option>
+                    <template for:each={picklistValues.primary_contact_of_nationality__c} for:item="option">
+                        <option key={option.value} value={option.value}>{option.label}</option>
+                    </template>
+                </select>
+                <template if:true={formErrors.primary_contact_of_nationality__c}>
+                    <div class="slds-text-color_error">{formErrors.primary_contact_of_nationality__c}</div>
+                </template>
+            </div>
+
+          
+            <div class="slds-col slds-size_1-of-2">
+                <label class="slds-form-element__label" for="secondaryNationality">Secondary Nationality*</label>
+                <select class="slds-select" id="secondaryNationality" data-field="secondary_country_of_nationality__c" onchange={handleChange} required>
+                    <option value="">-- Select --</option>
+                    <template for:each={picklistValues.secondary_country_of_nationality__c} for:item="option">
+                        <option key={option.value} value={option.value}>{option.label}</option>
+                    </template>
+                </select>
+                <template if:true={formErrors.secondary_country_of_nationality__c}>
+                    <div class="slds-text-color_error">{formErrors.secondary_country_of_nationality__c}</div>
+                </template>
+            </div>
+
+            <div class="slds-col slds-size_1-of-2">
+                <label class="slds-form-element__label" for="identificationType">Identification Type*</label>
+                <select class="slds-select" id="identificationType" data-field="identification_type__c" onchange={handleChange} required>
+                    <option value="">-- Select --</option>
+                    <template for:each={picklistValues.identification_type__c} for:item="option">
+                        <option key={option.value} value={option.value}>{option.label}</option>
+                    </template>
+                </select>
+                <template if:true={formErrors.identification_type__c}>
+                    <div class="slds-text-color_error">{formErrors.identification_type__c}</div>
+                </template>
+            </div>
+
+            <div class="slds-col slds-size_1-of-2">
+                <label class="slds-form-element__label" for="identificationNumber">Identification Number*</label>
+                <input
+                    type="text"
+                    id="identificationNumber"
+                    class="slds-input"
+                    data-field="Identification_Number__c"
+                    onchange={handleChange}
+                    required
+                />
+                <template if:true={formErrors.Identification_Number__c}>
+                    <div class="slds-text-color_error">{formErrors.Identification_Number__c}</div>
+                </template>
+            </div>
+        </div>
+
+        <div class="slds-grid slds-wrap slds-gutters slds-m-top_medium">
+            <div class="slds-col slds-size_1-of-1">
+                <button
+                    class="slds-button slds-button_brand"
+                    type="button"
+                    onclick={handleSubmit}>
+                    Submit
+                </button>
+            </div>
+        </div>
+    </div>
+</template>

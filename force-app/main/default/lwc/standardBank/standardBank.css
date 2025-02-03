@@ -1,0 +1,527 @@
+header {
+  width: 100%;
+  height: 100px;
+  background-color: rgb(29 29 187);
+  color: white;
+}
+
+.name {
+  color: white;
+  position: relative;
+    left: 20px;
+}
+
+.logo {
+  height: 90px;
+}
+
+.icon {
+  --slds-c-icon-color-foreground-default: white;
+  position: relative;
+  right: 8px;
+}
+
+.hover-container {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.hover-container:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.hover-container lightning-icon {
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.hover-container span {
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.custom-card {
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 12px;
+  position: relative;
+  top: 20px;
+}
+
+.card-small {
+  width: 40%;
+  height: 260px;
+}
+
+.icon-container {
+  margin-right: 16px;
+  flex-shrink: 0;
+}
+
+.blue-utility-icon {
+  --slds-c-icon-color-foreground-default: rgb(0, 162, 255);
+  margin-bottom: 10px;
+  width: 15px;
+  height: 15px;
+}
+
+.har {
+  position: relative;
+  top: 28px;
+}
+
+.paraClock {
+  line-height: 1.5;
+  position: relative;
+  left: 15px;
+  bottom: 6px;
+}
+
+.paraSave {
+  position: relative;
+  left: 15px;
+  top: 4px;
+}
+
+.card-large {
+  width: 60%;
+  height: 260px;
+}
+
+.card2 {
+  width: 158px;
+  height: 135px;
+  position: relative;
+  top: 22px;
+}
+
+.kfc {
+  position: relative;
+  left: 189px;
+  bottom: 132px;
+}
+
+.para {
+  line-height: 1.5;
+  position: relative;
+  top: 10px;
+  right: 154px;
+}
+
+.paraCheck {
+  line-height: 0.5;
+  position: relative;
+  top: 11px;
+}
+
+.xyz {
+  height: 290px;
+}
+
+.step-content.white {
+  color: rgb(0, 0, 0);
+}
+
+.custom-step-container {
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.blue-background {
+  background-color: rgb(29 29 187);
+}
+
+.white-background {
+  background-color: white;
+}
+
+.custom-layout {
+  gap: 0;
+}
+
+.line-break {
+  display: block;
+}
+
+.h {
+  font-size: large;
+}
+
+.no-gap-item {
+  margin: 0;
+  padding: 0;
+}
+
+lightning-layout-item {
+  padding: 10px;
+  height: 360px;
+}
+
+.step-content {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  padding: 1rem;
+}
+
+.slds-icon_blue {
+  position: relative;
+  bottom: 55px;
+  --slds-c-icon-color-foreground-default: rgb(0, 162, 255);
+  border: 3px solid rgb(0, 162, 255);
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+}
+
+.slds-icon_white {
+  position: relative;
+  bottom: 55px;
+  --slds-c-icon-color-foreground-default: white;
+  border: 3px solid white;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+}
+
+.par {
+  position: relative;
+  top: 10px;
+}
+
+.mar {
+  position: relative;
+  bottom: 35px;
+}
+
+.marg {
+  position: relative;
+  bottom: 10px;
+  font-size: larger;
+}
+
+.i {
+  --slds-c-icon-color-foreground-default: white;
+  position: relative;
+  right: 159px;
+  bottom: 25px;
+}
+
+.ic {
+  --slds-c-icon-color-foreground-default: rgb(29 29 187);
+  position: relative;
+  right: 159px;
+  bottom: 25px;
+}
+
+.padding {
+  padding-block: 50px;
+}
+
+footer {
+  font-size: 0.85rem;
+  background-color: rgb(17, 17, 66);
+  color: #ffffff;
+  width: 100%;
+}
+
+footer p {
+  margin: 0.25rem 0;
+}
+
+.list-item-space {
+  margin-right: 20px;
+}
+
+.abc {
+  color: white;
+}
+
+.abc:hover {
+  color: rgb(29 29 187);
+}
+
+@media (max-width: 768px) {
+  header {
+    height: auto;
+    padding: 15px;
+    text-align: center;
+  }
+
+  .name {
+    font-size: 1.25rem;
+  }
+
+  .logo {
+    height: 60px;
+  }
+
+  .hover-container {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .card-small,
+  .card-large {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+
+  .para {
+    font-size: 0.9rem;
+  }
+
+  .step-content {
+    padding: 10px;
+  }
+
+  .slds-icon_large {
+    bottom: 40px;
+  }
+
+  footer {
+    font-size: 0.7rem;
+  }
+
+  .list-item-space {
+    margin-right: 15px;
+  }
+
+  .abc {
+    font-size: 0.8rem;
+  }
+
+  .step-content.white {
+    color: rgb(0, 0, 0);
+  }
+
+  .custom-step-container {
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .blue-background {
+    background-color: rgb(29 29 187);
+  }
+
+  .white-background {
+    background-color: white;
+  }
+
+  .custom-layout {
+    gap: 0;
+  }
+
+  .line-break {
+    display: block;
+  }
+
+  .h {
+    font-size: large;
+  }
+
+  .no-gap-item {
+    margin: 0;
+    padding: 0;
+  }
+
+  lightning-layout-item {
+    padding: 10px;
+    height: 360px;
+  }
+
+  .step-content {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    padding: 1rem;
+  }
+
+  .slds-icon_large {
+    position: relative;
+    bottom: 65px;
+    --slds-c-icon-color-foreground-default: rgb(0, 162, 255);
+  }
+
+  .par {
+    position: relative;
+    top: 10px;
+  }
+
+  .mar {
+    position: relative;
+    bottom: 45px;
+  }
+
+  .marg {
+    position: relative;
+    bottom: 30px;
+    font-size: larger;
+  }
+
+  .i {
+    --slds-c-icon-color-foreground-default: white;
+    position: relative;
+    right: 159px;
+    bottom: 25px;
+  }
+
+  .ic {
+    --slds-c-icon-color-foreground-default: rgb(29 29 187);
+    position: relative;
+    right: 159px;
+    bottom: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-title {
+    font-size: 18px;
+  }
+
+  .para {
+    font-size: 0.85rem;
+  }
+
+  .slds-icon_large {
+    width: 24px;
+    height: 24px;
+  }
+
+  footer {
+    font-size: 0.65rem;
+    padding: 10px;
+  }
+
+  .list-item-space {
+    margin-right: 10px;
+  }
+
+  .step-content.white {
+    color: rgb(0, 0, 0);
+  }
+
+  .custom-step-container {
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .blue-background {
+    background-color: rgb(29 29 187);
+  }
+
+  .white-background {
+    background-color: white;
+  }
+
+  .custom-layout {
+    gap: 0;
+  }
+
+  .line-break {
+    display: block;
+  }
+
+  .h {
+    font-size: large;
+  }
+
+  .no-gap-item {
+    margin: 0;
+    padding: 0;
+  }
+
+  lightning-layout-item {
+    padding: 10px;
+    height: 360px;
+  }
+
+  .step-content {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    padding: 1rem;
+  }
+
+  .slds-icon_large {
+    position: relative;
+    bottom: 65px;
+    --slds-c-icon-color-foreground-default: rgb(0, 162, 255);
+  }
+
+  .par {
+    position: relative;
+    top: 10px;
+  }
+
+  .mar {
+    position: relative;
+    bottom: 45px;
+  }
+
+  .marg {
+    position: relative;
+    bottom: 30px;
+    font-size: larger;
+  }
+
+  .i {
+    --slds-c-icon-color-foreground-default: white;
+    position: relative;
+    right: 159px;
+    bottom: 25px;
+  }
+
+  .ic {
+    --slds-c-icon-color-foreground-default: rgb(29 29 187);
+    position: relative;
+    right: 159px;
+    bottom: 25px;
+  }
+}

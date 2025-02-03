@@ -1,0 +1,66 @@
+<template>
+    <lightning-card title="Opportunities" icon-name="standard:opportunity">
+        <template if:true={opportunities.length}>
+            <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_fixed-layout">
+                <thead>
+                    <tr>
+                        <th  style="width: 40%;">
+                            <div class="slds-truncate" title="Opportunity Name">Opportunity Name</div>
+                        </th>
+                        <th style="width: 20%;">
+                            <div class="slds-truncate" title="Stage">Stage</div>
+                        </th>
+                        <th  style="width: 20%;">
+                            <div class="slds-truncate" title="Close Date">Close Date</div>
+                        </th>
+                        <th  style="width: 20%;">
+                            <div class="slds-truncate" title="Amount">Amount</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={opportunities} for:item="opportunity">
+                        <tr key={opportunity.Id}>
+                            <td>
+                                <a
+                                    href="javascript:void(0);"
+                                    title={opportunity.Name}
+                                    data-id={opportunity.Id}
+                                    onclick={handleOpportunityClick}
+                                    class="slds-truncate">
+                                    {opportunity.Name}
+                                </a>
+                            </td>
+                            <td>
+                                <div class="slds-truncate" title={opportunity.StageName}>
+                                    {opportunity.StageName}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="slds-truncate" title={opportunity.CloseDate}>
+                                    {opportunity.CloseDate}
+                                </div>
+                            </td>
+                            <td class="amount-column">
+                                <div class="slds-truncate" title={opportunity.Amount}>
+                                    <template if:true={opportunity.Amount}>
+                                        ${opportunity.Amount}
+                                    </template>
+                                    <template if:false={opportunity.Amount}>
+                                        N/A
+                                    </template>
+                                </div>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </template>
+        <template if:true={error}>
+            <p class="slds-text-color_error">Error fetching opportunities: {error.body.message}</p>
+        </template>
+        <template if:false={opportunities.length}>
+            <p>No opportunities found for this account.</p>
+        </template>
+    </lightning-card>
+</template>

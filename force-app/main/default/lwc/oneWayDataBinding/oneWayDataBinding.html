@@ -1,0 +1,103 @@
+<template>
+    <header class="slds-grid slds-align_absolute-center slds-p-around_small slds-box slds-theme_shade">
+        <div class="slds-col slds-size_1-of-3 slds-text-heading_medium" >
+         <p class="name"><strong>Standard Bank</strong> International</p>
+        </div>
+    
+        <div class="slds-col slds-size_1-of-3 slds-text-heading_medium slds-align_absolute-center" >
+            <!-- Reference the static resource image -->
+            <img src={logoUrl}  />
+        </div>
+        <div class="slds-col slds-size_1-of-3 slds-text-align_right">
+           <lightning-icon 
+             icon-name="utility:lock" 
+             alternative-text="lock" 
+             size="small" 
+             title="large size"
+             variant="inverse"
+           ></lightning-icon>
+        </div>
+    </header>
+
+
+
+
+
+
+
+
+
+    <div class="outer  slds-align_absolute-center ">
+        <main class="slds-grid slds-grid_vertical-align-center slds-align_absolute-center slds-m-around_large  ">
+            <div class="slds-grid_align-center  ">
+            <div class="slds-grid slds-wrap slds-text-align_center ">
+                <div class="slds-col slds-size_12-of-12 slds-text-align_center">
+               <div class="slds-text-align_center slds-p-bottom_medium">
+                <lightning-icon icon-name="action:approval" alternative-text="approval" ></lightning-icon>
+                <h1 class="slds-text-heading_large slds-m-top_medium">Congratulations!</h1>
+                <p>Your Optimum Bank Account has been opened</p>
+               </div>
+ 
+                </div>
+          </div>
+            <div class="slds-grid slds-wrap slds-grid-align_center slds-align_absolute-center">
+                <div class="slds-col slds-size_6-of-12 slds-text-align_left slds-p-around_medium">
+                    <img class="cardimg" src={cardUrl}  />             
+                 </div>
+                <div class="slds-col slds-size_6-of-12 slds-text-align_right">
+                  <div class="slds-text-align_left">
+                    <h3 class="slds-text-heading_small slds-m-bottom_medium slds-p-left_medium"><strong>Account Details</strong></h3>
+                    <ul class="slds-list_vertical slds-m-left_medium">
+                        <li class="slds-m-bottom_medium" style="white-space: nowrap;">
+                            <span class="slds-text-bold">Customer Number:</span> 
+                            <strong>1234 567 8910 5678</strong>
+                        </li>
+                        <li class="slds-m-bottom_medium" style="white-space: nowrap;">
+                            <span class="slds-text-bold">Account Number:</span> 
+                            <strong>1234 567 8910 5678</strong>
+                        </li>
+                        <li class="slds-m-bottom_medium" style="white-space: nowrap;">
+                            <span class="slds-text-bold">Date Account Opened:</span> 
+                            <strong>26/04/2023</strong>
+                        </li>
+                        <li class="slds-m-bottom_medium" style="white-space: nowrap;">
+                            <span class="slds-text-bold">Account Funding Balance:</span> 
+                            <strong>Not yet funded</strong>
+                        </li>
+                    </ul>
+                    
+                  </div>
+                </div>
+            </div>
+        </div>
+        </main>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="slds-grid slds-align_absolute-center slds-p-around_small slds-theme_shade">
+        <div class="slds-text-align_left slds-size_1-of-1 ">
+            <ul class="slds-list_horizontal slds-p-around_large">
+                <li class="slds-item list-item-space"><a>Advisors</a> </li>
+                <li class="slds-item list-item-space"><a >Regulatory</a></li>
+                <li class="slds-item list-item-space">Legal</li>
+                <li class="slds-item list-item-space">Privacy Statements</li>
+                <li class="slds-item">Terms and Conditions</li>
+            </ul>
+            <p class="slds-p-left_medium">
+                Standard Bank Isle of Man Limited (“SBIoM”) is licensed by the Isle of Man Financial Services Authority.
+            </p>
+        </div>
+      </footer>
+   
+</template>

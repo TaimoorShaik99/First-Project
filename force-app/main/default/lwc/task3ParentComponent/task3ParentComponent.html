@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Parent to Child Communication - Parent">
+        <div class="slds-box">
+            <lightning-input type="text" label="Number" onchange={handelchange}></lightning-input>
+            <lightning-button label="Increase" variant="brand" onclick={handelclick}></lightning-button>
+            <div class="slds-grid slds-wrap">
+          <c-task3-child-component message={parentmessage} num={number}></c-task3-child-component>
+        </div>
+        </div>
+    </lightning-card>
+</template>

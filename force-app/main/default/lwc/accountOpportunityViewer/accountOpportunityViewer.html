@@ -1,0 +1,25 @@
+<template>
+    <!-- Account List -->
+    <lightning-card title="Accounts List">
+        <lightning-datatable 
+            key-field="Id" 
+            data={accounts} 
+            columns={accountColumns} 
+            hide-checkbox-column="true"
+            onrowaction={handleRowAction}>
+        </lightning-datatable>
+    </lightning-card>
+
+    <!-- Related Opportunities (Displayed on a new page if navigated) -->
+    <template if:true={selectedAccountId}>
+        <lightning-card title="Related Opportunities">
+            <p class="slds-p-horizontal_small">Showing opportunities for <strong>{selectedAccountName}</strong></p>
+            <lightning-datatable 
+                key-field="Id" 
+                data={opportunities} 
+                columns={opportunityColumns} 
+                hide-checkbox-column="true">
+            </lightning-datatable>
+        </lightning-card>
+    </template>
+</template>

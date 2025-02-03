@@ -1,0 +1,56 @@
+.inputs{
+    padding-left: 100%;
+  }
+   
+  .account-container {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+  }
+   
+  .account-card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 16px;
+      width: 300px;
+      position: relative;
+      cursor: pointer;
+      transition: box-shadow 0.2s ease-in-out;
+  }
+   
+  .account-card.selected {
+      box-shadow: 0 0 8px #0070d2;
+      border-color: #0070d2;
+  }
+   
+  .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+     
+  }
+   
+  .badge {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 8px;
+  }
+   
+  .supported-currencies {
+      font-size: 0.9rem;
+      color: #666;
+  }
+   
+  .actions {
+      margin-top: 10px;
+      margin-bottom: 15px;
+      padding-left: 80%;
+     
+  }
+   
+  .instructions,h2,p{
+      padding: 5px;
+  }
+  

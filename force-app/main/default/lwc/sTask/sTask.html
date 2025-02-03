@@ -1,0 +1,50 @@
+<template>
+    <lightning-card title="New Account Applications">
+        <div class="slds-p-around_medium">
+            <h2 class="slds-text-heading_medium">Start a new application journey</h2>
+            <p class="slds-text-body_regular">Please select which account you want to apply for:</p>
+        </div>
+        <div class="slds-m-bottom_medium slds-text-align_center">
+            <lightning-button
+                label="Start Application"
+                icon-name="utility:chevronright"
+                icon-position="right"
+                variant="neutral"
+                onclick={startApplication}
+            ></lightning-button>
+        </div>
+        <div class="slds-grid slds-wrap slds-gutters">
+            <template for:each={accounts} for:item="account">
+                <div
+                    key={account.id}
+                    class="slds-box slds-box_x-small slds-theme_default slds-m-around_x-small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-is-relative slds-p-around_medium slds-border slds-border_radius"
+                    onclick={handleSelection}
+                    data-id={account.id}
+                >
+                    <lightning-input
+                        class="slds-m-bottom_small"
+                        type="radio"
+                        label=""
+                        name="accountSelection"
+                        value={account.id}
+                        checked={account.selected}
+                        onchange={handleRadioChange}
+                    ></lightning-input>
+                    <div class="slds-grid slds-grid_align-spread slds-m-bottom_small">
+                        <span
+                            class="slds-badge"
+                            style="background-color: {account.badgeColor}"
+                        ></span>
+                        <h3 class="slds-text-heading_small slds-truncate">
+                            <strong>{account.name}</strong>
+                        </h3>
+                    </div>
+                    <p class="slds-text-body_small slds-m-bottom_x-small">{account.description}</p>
+                    <p class="slds-text-body_small slds-text-color_weak">
+                        Supported currencies: {account.currencies}
+                    </p>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

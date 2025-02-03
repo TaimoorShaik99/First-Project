@@ -1,0 +1,162 @@
+<template>
+    <lightning-card title="Opportunities" icon-name="standard:opportunity">
+        <template if:true={opportunities.length}>
+            <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_fixed-layout">
+                <thead>
+                    <tr>
+                        <th  style="width: 15%;">
+                            <div class="slds-truncate" title="Select">Select</div>
+                        </th>
+                        <th  style="width: 35%;">
+                            <div class="slds-truncate" title="Opportunity Name">Opportunity Name</div>
+                        </th>
+                        <th  style="width: 20%;">
+                            <div class="slds-truncate" title="Stage">Stage</div>
+                        </th>
+                        <th  style="width: 20%;">
+                            <div class="slds-truncate" title="Close Date">Close Date</div>
+                        </th>
+                        <th  style="width: 20%;">
+                            <div class="slds-truncate" title="Amount">Amount</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={opportunities} for:item="opportunity">
+                        <tr key={opportunity.Id}>
+                            <td>
+                                <input
+                                    type="checkbox"
+                                    data-id={opportunity.Id}
+                                    onchange={handleCheckboxChange}
+                                />
+                            </td>
+                            <td>
+                                <a
+                                    href="javascript:void(0);"
+                                    title={opportunity.Name}
+                                    data-id={opportunity.Id}
+                                    onclick={handleOpportunityClick}
+                                    class="slds-truncate">
+                                    {opportunity.Name}
+                                </a>
+                            </td>
+                            <td>
+                                <div class="slds-truncate" title={opportunity.StageName}>
+                                    {opportunity.StageName}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="slds-truncate" title={opportunity.CloseDate}>
+                                    {opportunity.CloseDate}
+                                </div>
+                            </td>
+                            <td class="amount-column">
+                                <div class="slds-truncate" title={opportunity.Amount}>
+                                    <template if:true={opportunity.Amount}>
+                                        ${opportunity.Amount}
+                                    </template>
+                                    <template if:false={opportunity.Amount}>
+                                        N/A
+                                    </template>
+                                </div>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+            <div class="slds-m-top_medium">
+                <lightning-button
+                    label="Update Stage"
+                    variant="brand"
+                    onclick={handleUpdateStage}
+                ></lightning-button>
+            </div>
+        </template>
+        <template if:true={error}>
+            <p class="slds-text-color_error">Error fetching opportunities: {error.body.message}</p>
+        </template>
+        <template if:false={opportunities.length}>
+            <p>No opportunities found for this account.</p>
+        </template>
+    </lightning-card>
+
+    <!-- Modal for Stage Selection -->
+    <template if:true={showModal}>
+        <section role="dialog"  class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium">Update Stage</h2>
+                    <button
+                        class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close"
+                        onclick={closeModal}
+                    >
+                        <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                    </button>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-combobox
+                        name="stage"
+                        label="Select New Stage"
+                        value={selectedStage}
+                        placeholder="Choose a stage"
+                        options={stageOptions}
+                        onchange={handleStageChange}
+                    ></lightning-combobox>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button
+                        label="Cancel"
+                        variant="neutral"
+                        onclick={closeModal}
+                    ></lightning-button>
+                    <lightning-button
+                        label="Confirm"
+                        variant="brand"
+                        onclick={confirmStageUpdate}
+                    ></lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+    <!-- Confirmation Modal -->
+    <template if:true={showConfirmationModal}>
+        <section role="dialog"  class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium">Confirm Stage Update</h2>
+                    <button
+                        class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close"
+                        onclick={closeConfirmationModal}
+                    >
+                        <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                    </button>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <p>
+                        Are you sure you want to update the stage for 
+                        <strong> {selectedOpportunities.size}</strong> opportunities to
+                        <strong>"{selectedStage}"</strong>?
+                    </p>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button
+                        label="Cancel"
+                        variant="neutral"
+                        onclick={closeConfirmationModal}
+                    ></lightning-button>
+                    <lightning-button
+                        label="Confirm"
+                        variant="brand"
+                        onclick={applyStageUpdate}
+                    ></lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

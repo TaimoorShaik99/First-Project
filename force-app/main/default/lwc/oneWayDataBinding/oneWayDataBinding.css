@@ -1,0 +1,36 @@
+img {
+    width: 70px; /* Set the desired width */
+    height: 50px;  /* Maintain the aspect ratio */
+    
+}
+header{
+    background-color: blue;
+}
+.name{
+    color: aliceblue;
+}
+.list-item-space {
+    margin-right: 20px;
+}
+.slds-list_horizontal{
+    font-size: medium;
+}
+.info{
+    font-size: 13px;
+}
+.outer {
+    background-color: rgb(240, 235, 235);
+    height: 500px;
+   
+}
+main{
+    background-color: white;
+    width: 80%;
+    height: 80%;
+}
+.cardimg{
+    width: 100%;
+    height: 50%;
+
+}
+

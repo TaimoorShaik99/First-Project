@@ -1,0 +1,26 @@
+/* Align Amount fields to the right */
+.amount-column {
+    text-align: right;
+}
+ 
+/* Add hover effect for table rows */
+.slds-table tr:hover {
+    background-color: #f4f6f9;
+}
+ 
+/* Customize link style for Opportunity Name */
+.slds-truncate a {
+    color: #0070d2;
+    font-weight: bold;
+    text-decoration: none;
+}
+ 
+.slds-truncate a:hover {
+    text-decoration: underline;
+}
+ 
+/* Ensure consistent column widths */
+.slds-table th, .slds-table td {
+    text-align: left;
+    padding: 0.5rem;
+}

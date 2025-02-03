@@ -1,0 +1,36 @@
+/* Hide the default radio button */
+.slds-radio input[type="radio"] {
+    display: none;
+  }
+  
+  /* Styling for the custom radio button */
+  .slds-radio .slds-radio_faux {
+    position: relative;
+    display: inline-block;
+    width: 1.5rem; /* Slightly larger for visibility */
+    height: 1.5rem;
+    border: 2px solid #d8dde6;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+  
+  /* Styling for the checked radio button */
+  .slds-radio input[type="radio"]:checked + .slds-radio_faux {
+    border-color: #0070d2;
+    background-color: #fff;
+  }
+  
+  /* Add the tick symbol inside the radio button */
+  .slds-radio input[type="radio"]:checked + .slds-radio_faux::after {
+    content: '✔'; /* Tick symbol */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1rem; /* Adjust tick size */
+    color: #0070d2; /* Blue color for the tick */
+    font-weight: bold;
+  }
+  

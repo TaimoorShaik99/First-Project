@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Accounts List">
+        <lightning-datatable 
+            key-field="Id" 
+            data={accounts} 
+            columns={columns} 
+            hide-checkbox-column="true"
+            onrowaction={handleRowAction}>
+        </lightning-datatable>
+    </lightning-card>
+</template>

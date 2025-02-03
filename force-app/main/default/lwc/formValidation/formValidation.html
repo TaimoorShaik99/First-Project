@@ -1,0 +1,74 @@
+<template>
+    <lightning-card title="Demo Form">
+        <div class="slds-box">
+            <div class="slds-grid slds-wrap">
+                <!-- Name Field -->
+                <div class="slds-col slds-size_6-of-12 slds-p-around_x-small">
+                    <lightning-input
+                        type="text"
+                        label="Name"
+                        placeholder="Enter Name"
+                        name="name"
+                        minlength="5"
+                        maxlength="15"
+                        
+                        value={formDetails.name}
+                        onchange={handleInputChange}>
+                    </lightning-input>
+                    <template if:true={errors.name}>
+                        <div class="slds-text-color_error">{errors.name}</div>
+                    </template>
+                </div>
+
+                <!-- Address Field -->
+                <div class="slds-col slds-size_6-of-12 slds-p-around_x-small">
+                    <lightning-textarea
+                        label="Address"
+                        placeholder="Enter Address"
+                        name="address"
+                        
+                        value={formDetails.address}
+                        onchange={handleInputChange}>
+                    </lightning-textarea>
+                    <template if:true={errors.address}>
+                        <div class="slds-text-color_error">{errors.address}</div>
+                    </template>
+                </div>
+            </div>
+
+            <div class="slds-grid slds-wrap">
+                <!-- Checkbox Field -->
+                <div class="slds-col slds-size_6-of-12 slds-p-around_x-small">
+                    <lightning-input
+                        type="checkbox"
+                        label="Please check the box"
+                        name="checkbox"
+                        value={formDetails.checkbox}
+                        onchange={handleInputChange}>
+                    </lightning-input>
+                    <template if:true={errors.checkbox}>
+                        <div class="slds-text-color_error">{errors.checkbox}</div>
+                    </template>
+                </div>
+
+                <!-- Radio Field -->
+                <div class="slds-col slds-size_6-of-12 slds-p-around_x-small">
+                    <lightning-input
+                        type="radio"
+                        label="Make it dark"
+                        name="radio"
+                        value="dark"
+                        onchange={handleInputChange}>
+                    </lightning-input>
+                    <template if:true={errors.radio}>
+                        <div class="slds-text-color_error">{errors.radio}</div>
+                    </template>
+                </div>
+            </div>
+
+            <div class="slds-grid slds-wrap slds-align_absolute-center">
+                <button class="slds-button slds-button_brand" onclick={handleSubmit}>Submit</button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

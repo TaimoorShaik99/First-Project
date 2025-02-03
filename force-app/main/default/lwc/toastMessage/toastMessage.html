@@ -1,0 +1,8 @@
+<template>
+    <template if:true={isVisible}>
+        <div class="custom-toast custom-toast-{variant}">
+            <span>{message}</span>
+            <button class="close-toast" onclick={handleClose}>&times;</button>
+        </div>
+    </template>
+</template>

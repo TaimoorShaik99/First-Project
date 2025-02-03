@@ -1,0 +1,58 @@
+<template>
+    <lightning-card title="Dynamic Form with Validation" icon-name="action:new">
+        <div class="slds-p-around_medium">
+            <!-- Text Field -->
+            <lightning-input
+                type="text"
+                name="textField"
+                label="Text Field"
+                value={formDetails.textField}
+                onchange={handleInputChange}>
+            </lightning-input>
+            <template if:true={errors.textField}>
+                <p class="slds-text-color_error">{errors.textField}</p>
+            </template>
+
+            <!-- Textarea Field -->
+            <lightning-textarea
+                name="textAreaField"
+                label="Textarea Field"
+                value={formDetails.textAreaField}
+                onchange={handleInputChange}>
+            </lightning-textarea>
+            <template if:true={errors.textAreaField}>
+                <p class="slds-text-color_error">{errors.textAreaField}</p>
+            </template>
+
+            <!-- Radio Buttons -->
+            <!-- <lightning-radio-group
+                name="radioField"
+                label="Radio Field"
+                options={radioOptions}
+                value={formDetails.radioField}
+                onchange={handleInputChange}>
+            </lightning-radio-group>
+            <template if:true={errors.radioField}>
+                <p class="slds-text-color_error">{errors.radioField}</p>
+            </template> -->
+
+            <!-- Checkbox -->
+            <lightning-input
+                type="checkbox"
+                name="checkboxField"
+                label="Checkbox Field"
+                checked={formDetails.checkboxField}
+                onchange={handleInputChange}>
+            </lightning-input>
+            <template if:true={errors.checkboxField}>
+                <p class="slds-text-color_error">{errors.checkboxField}</p>
+            </template>
+
+            <!-- Submit Button -->
+            <div class="slds-m-top_medium">
+                <lightning-button label="Submit" variant="brand" onclick={handleSubmit}>
+                </lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,7 @@
+.slds-button_neutral{
+    background-color: skyblue;
+    border: none;
+}
+.slds-button_neutral:hover{
+    background-color: mediumseagreen;
+}

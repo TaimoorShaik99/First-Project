@@ -1,0 +1,178 @@
+<template>
+  <!-- Header -->
+  <header class="slds-grid slds-p-around_medium slds-align_absolute-center slds-box">
+    <div class="slds-col slds-size_1-of-3 slds-text-heading_medium">
+      <p class="name"><strong>Standard Bank </strong> International</p>
+    </div>
+    <div class="slds-col slds-size_1-of-3">
+      <div class="slds-align_absolute-center">
+        <img class="logo" src={logoUrl} />
+      </div>
+    </div>
+    <div class="slds-col slds-size_1-of-3 slds-text-align_right ">
+      <div class="hover-container">
+        <lightning-icon icon-name="utility:profile_alt" size="small" class="icon"></lightning-icon>
+        <span class="slds-m-right_medium">User Name</span>
+        <lightning-icon icon-name="utility:down" size="xx-small" class="icon"></lightning-icon>
+      </div>
+      <div class="hover-container">
+        <lightning-icon icon-name="utility:lock" size="small" class="icon"></lightning-icon>
+        <span class="slds-m-right_medium">SIGN OUT</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="slds-box xyz" style="border:none">
+    <div class="slds-grid card slds-gutters slds-m-right_xxx-small">
+      <!-- Card 1 -->
+      <div class="custom-card card-small slds-col slds-size_1-of-2 slds-m-right_medium">
+        <h2 class="card-title">About this application</h2>
+        <div class="slds-p-around_medium har">
+          <div class="slds-m-bottom_medium slds-grid">
+            <span class="icon-container">
+              <lightning-icon icon-name="utility:clock" size="medium" class="blue-utility-icon"></lightning-icon>
+            </span>
+            <p class="paraClock">This application will take you about<br>10-15 minutes to complete.
+            </p>
+          </div>
+          <div class="slds-grid">
+            <span class="icon-container">
+              <lightning-icon icon-name="utility:save" size="medium" class="blue-utility-icon"></lightning-icon>
+            </span>
+            <p class="paraSave">You can save it at any time, and continue later.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="custom-card card-large slds-col slds-size_1-of-2 slds-m-right_medium">
+        <span>
+          <img class="card2" src={card2logo} />
+        </span>
+        <div class="kfc">
+          <h2 class="card-subtitle">You'll need a few things</h2>
+          <div class="slds-p-around_small">
+            <div class="slds-m-bottom_medium slds-grid proof">
+              <span class="icon-container">
+                <lightning-icon icon-name="utility:success" size="small" class="blue-utility-icon"></lightning-icon>
+              </span>
+              <p class="paraCheck">Proof of identity</p>
+            </div>
+            <div class="slds-grid slds-m-bottom_medium proof">
+              <span class="icon-container">
+                <lightning-icon icon-name="utility:success" size="small" class="blue-utility-icon"></lightning-icon>
+              </span>
+              <p class="paraCheck">Proof of address</p>
+            </div>
+          </div>
+          <p class="para">
+            You may also need to supply other supporting documents. These can be
+            <span class="line-break">uploaded as PDFs, Docs, PNGs, or JPEGs. If we need any other</span>
+            <span class="line-break">paperwork, we'll let you know.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slds-box slds-p-around_medium slds-m-vertical_xx-small" style="border:none">
+    <h1 class="h"><strong>Your Application in 4 steps</strong></h1>
+  </div>
+
+  <lightning-layout multiple-rows gap="0" class="custom-layout">
+    <lightning-layout-item size="3" class="no-gap-item">
+      <div class="step-content white-background custom-step-container">
+        <lightning-icon icon-name="utility:lock" size="medium" class="slds-icon_blue"></lightning-icon>
+        <h2 class="mar">Step 1</h2>
+        <h2 class="marg"><strong>Authenticate</strong></h2>
+        <lightning-icon icon-name="utility:right" size="small" class="i"></lightning-icon>
+        <p class="par">Let’s begin by confirming
+          <span class="line-break">your identity.</span>
+        </p>
+      </div>
+    </lightning-layout-item>
+
+    <lightning-layout-item size="3" class="no-gap-item">
+      <div class="step-content blue-background custom-step-container slds-text-color_inverse">
+        <lightning-icon icon-name="utility:user" size="medium" class="slds-icon_white"></lightning-icon>
+        <h2 class="mar">Step 2</h2>
+        <h2 class="marg"><strong>About You</strong></h2>
+        <lightning-icon icon-name="utility:right" size="small" class="i"></lightning-icon>
+        <p class="par">We need personal details
+          <span class="line-break"> and other information.</span>
+        </p>
+      </div>
+    </lightning-layout-item>
+
+    <lightning-layout-item size="3" class="no-gap-item">
+      <div class="step-content white-background custom-step-container ">
+        <lightning-icon icon-name="utility:signature" size="medium" class="slds-icon_blue"></lightning-icon>
+        <h2 class="mar">Step 3</h2>
+        <h2 class="marg"><strong>Application Signing</strong></h2>
+        <lightning-icon icon-name="utility:right" size="small" class="ic"></lightning-icon>
+        <p class="par">Sign the application
+          <span class="line-break">form using Adobe Sign.</span>
+        </p>
+      </div>
+    </lightning-layout-item>
+
+    <lightning-layout-item size="3" class="no-gap-item">
+      <div class="step-content blue-background custom-step-container slds-text-color_inverse">
+        <lightning-icon icon-name="utility:upload" size="medium" class="slds-icon_white"></lightning-icon>
+        <h2 class="mar">Step 4</h2>
+        <h2 class="marg"><strong>Supporting Documents</strong></h2>
+        <lightning-icon icon-name="utility:right" size="small" class="i"></lightning-icon>
+        <p class="par">Upload supporting
+          <span class="line-break">documents if required.</span>
+        </p>
+      </div>
+    </lightning-layout-item>
+  </lightning-layout>
+
+  <div class="padding">
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Title</th>
+        </tr>
+      </thead>
+      <tbody>
+        <template for:each={paginatedContacts} for:item="contact">
+          <tr key={contact.Id}>
+            <td>{contact.Name}</td>
+            <td>{contact.Email}</td>
+            <td>{contact.Phone}</td>
+            <td>{contact.Title}</td>
+          </tr>
+        </template>
+      </tbody>
+    </table>
+
+    <!-- Pagination -->
+    <div class="slds-m-top_medium slds-grid slds-grid_align-center">
+      <button class="slds-button slds-button_neutral" onclick={previousPage} disabled={isFirstPage}>Previous</button>
+      <span class="slds-m-horizontal_medium">Page {currentPage} of {totalPages}</span>
+      <button class="slds-button slds-button_neutral" onclick={nextPage} disabled={isLastPage}>Next</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="slds-grid slds-wrap slds-p-around_small slds-theme_shade">
+    <div class="slds-text-align_left slds-size_1-of-1">
+      <ul class="slds-list_horizontal slds-wrap  slds-p-around_large">
+        <li class="slds-item list-item-space"><a class="abc">ADVISORS</a></li>
+        <li class="slds-item list-item-space"><a class="abc">REGULATORY</a></li>
+        <li class="slds-item list-item-space"><a class="abc">LEGAL</a></li>
+        <li class="slds-item list-item-space"><a class="abc">PRIVACY STATEMENTS</a></li>
+        <li class="slds-item list-item-space"><a class="abc">TERMS AND CONDITIONS</a></li>
+      </ul>
+      <p class="slds-p-left_large">
+        Standard Bank Isle of Man Limited (“SBIoM”) is licensed by the Isle of Man Financial Services Authority. the
+        Standard Bank House, one <br>
+        Circular Road, Douglas, Isle of Man, IM1 1SB. Registered in the Isle of Man No.4713C.
+      </p>
+    </div>
+  </footer>
+</template>

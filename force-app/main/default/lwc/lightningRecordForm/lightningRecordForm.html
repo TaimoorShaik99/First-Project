@@ -1,0 +1,19 @@
+<template>
+    <lightning-card label="Create Contact" title="Create Contact">
+        <div class="slds-p-around_medium">
+            <lightning-record-form object-api-name="Contact" fields={fields}
+                onsubmit={handelsubmit} onerror={handelerror}>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col">
+                        <lightning-input field-name="First Name" required></lightning-input>
+                    </div>
+                </div>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col">
+                        <lightning-input field-name="Last Name" required></lightning-input>
+                    </div>
+                </div>
+            </lightning-record-form>
+        </div>
+    </lightning-card>
+</template>

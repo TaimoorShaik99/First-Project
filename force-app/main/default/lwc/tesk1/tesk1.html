@@ -1,0 +1,27 @@
+<template>
+    <lightning-card>
+        <div class="slds-box">
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_6-of-12 slds-p-around_x-small" >
+                    <lightning-input type="text" label="First Name" placeholder="Enter First Name" name="firstName" onchange={handelchange}></lightning-input>
+                </div>
+                <div class="slds-col slds-size_6-of-12 slds-p-around_x-small" >
+                    <lightning-input type="text" label="Last Name" placeholder="Enter Last Name" name="lastName" onchange={handelchange}></lightning-input>
+                </div>
+            </div>
+
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_6-of-12 slds-p-around_x-small" >
+                    <lightning-input type="text" label="Email" placeholder="Enter EmailId" name="email" onchange={handelchange}></lightning-input>
+                </div>
+                <div class="slds-col slds-size_6-of-12 slds-p-around_x-small" >
+                    <lightning-input type="number" label="Mobile No" placeholder="Enter MobileNo" name="mobileNo" onchange={handelchange}></lightning-input>
+                </div>
+            </div>
+
+            <div class="slds-grid slds-wrap slds-align_absolute-center"> 
+                <button class="slds-button slds-button_neutral" onclick={handleSubmit}>Submit</button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

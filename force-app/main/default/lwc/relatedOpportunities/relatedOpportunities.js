@@ -11,7 +11,7 @@
  ******************************************************************************************
  */
 
- // GitTest....... 
+ // GitTest....... .
  import { LightningElement, track } from 'lwc';
  import { NavigationMixin } from 'lightning/navigation';
  import getOpportunities from '@salesforce/apex/AccountControllerNav.getOpportunities';

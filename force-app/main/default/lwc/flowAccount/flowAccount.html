@@ -1,0 +1,70 @@
+<!--/*
+ ******************************************************************************************
+ * @Name of the LWC    :  flowAccount.html
+ * @ Description       :  To get opportunity records and to update stage field 
+ * @ Author            :  Taimoor Shaik
+ * @ Created Date      :  31-01-2024
+ ******************************************************************************************
+ * @ Last Modified By         :  Taimoor Shaik
+ * @ Last Modified On         :  31-01-2024
+ * @ Modification Description : Added extra functionality
+ ******************************************************************************************
+ -->
+
+ 
+ <template>
+    <lightning-card title="Accounts" icon-name="standard:account">
+        <template if:true={accounts.length}>
+            <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_fixed-layout">
+                <thead>
+                    <tr>
+                        <th style="width: 30%;">
+                            <div class="slds-truncate" title="Account Name">Account Name</div>
+                        </th>
+                        <th style="width: 20%;">
+                            <div class="slds-truncate" title="Industry">Industry</div>
+                        </th>
+                        <th style="width: 20%;">
+                            <div class="slds-truncate" title="Phone">Phone</div>
+                        </th>
+                        <th style="width: 30%;">
+                            <div class="slds-truncate" title="Actions">Actions</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={paginatedAccounts} for:item="account">
+                        <tr key={account.Id}>
+                            <td>{account.Name}</td>
+                            <td>{account.Industry}</td>
+                            <td>{account.Phone}</td>
+                            <td>
+                                <lightning-button
+                                    label="View Opportunities"
+                                    variant="brand"
+                                    data-id={account.Id}
+                                    onclick={handleViewOpportunities}>
+                                </lightning-button>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+
+            <!-- Pagination Controls -->
+            <div class="slds-m-top_medium slds-grid slds-grid_align-center">
+                <lightning-button label="Previous" onclick={previousPage} disabled={isFirstPage}></lightning-button>
+                <span class="slds-m-horizontal_medium">Page {currentPage} of {totalPages}</span>
+                <lightning-button label="Next" onclick={nextPage} disabled={isLastPage}></lightning-button>
+            </div>
+        </template>
+
+        <template if:true={error}>
+            <p class="slds-text-color_error">Error fetching accounts: {error.body.message}</p>
+        </template>
+
+        <template if:false={accounts.length}>
+            <p>No accounts found.</p>
+        </template>
+    </lightning-card>
+</template>

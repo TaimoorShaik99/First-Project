@@ -3,7 +3,7 @@ import getOpportunities from '@salesforce/apex/AccountControllerNav.getOpportuni
 import updateOpportunityStages from '@salesforce/apex/AccountControllerNav.updateOpportunityStages';
 import getStageNamePicklistValues from '@salesforce/apex/AccountControllerNav.getStageNamePicklistValues';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
-import { FlowNavigationBackEvent } from 'lightning/flowSupport';
+//import { FlowNavigationBackEvent } from 'lightning/flowSupport';
 
 export default class RelatedOpportunities extends LightningElement {
     @api accountId; // Received from Flow
@@ -20,6 +20,7 @@ export default class RelatedOpportunities extends LightningElement {
     totalPages = 0;
 
     connectedCallback() {
+        console.log('23', this.accountId);
         if (this.accountId) {
             this.fetchOpportunities();
             this.fetchStageOptions();
@@ -80,7 +81,4 @@ export default class RelatedOpportunities extends LightningElement {
         return this.currentPage === this.totalPages;
     }
 
-    handleGoBack() {
-        this.dispatchEvent(new FlowNavigationBackEvent()); // Navigate back in Flow
-    }
 }

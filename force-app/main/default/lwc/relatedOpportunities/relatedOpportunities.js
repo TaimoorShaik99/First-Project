@@ -12,7 +12,8 @@
  */
 
  // GitTest....... .
- import { LightningElement, track } from 'lwc';
+ //Test
+ import { LightningElement, track, api } from 'lwc';
  import { NavigationMixin } from 'lightning/navigation';
  import getOpportunities from '@salesforce/apex/AccountControllerNav.getOpportunities';
  import updateOpportunityStages from '@salesforce/apex/AccountControllerNav.updateOpportunityStages';
@@ -20,7 +21,7 @@
  import { ShowToastEvent } from 'lightning/platformShowToastEvent';
  
  export default class RelatedOpportunities extends NavigationMixin(LightningElement) {
-     @track accountId;
+     @api accountId;
      @track opportunities = [];
      @track paginatedOpportunities = [];
      @track selectedOpportunities = new Set();

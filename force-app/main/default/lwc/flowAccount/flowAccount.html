@@ -15,41 +15,13 @@
  <template>
     <lightning-card title="Accounts" icon-name="standard:account">
         <template if:true={accounts.length}>
-            <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_fixed-layout">
-                <thead>
-                    <tr>
-                        <th style="width: 30%;">
-                            <div class="slds-truncate" title="Account Name">Account Name</div>
-                        </th>
-                        <th style="width: 20%;">
-                            <div class="slds-truncate" title="Industry">Industry</div>
-                        </th>
-                        <th style="width: 20%;">
-                            <div class="slds-truncate" title="Phone">Phone</div>
-                        </th>
-                        <th style="width: 30%;">
-                            <div class="slds-truncate" title="Actions">Actions</div>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <template for:each={paginatedAccounts} for:item="account">
-                        <tr key={account.Id}>
-                            <td>{account.Name}</td>
-                            <td>{account.Industry}</td>
-                            <td>{account.Phone}</td>
-                            <td>
-                                <lightning-button
-                                    label="View Opportunities"
-                                    variant="brand"
-                                    data-id={account.Id}
-                                    onclick={handleViewOpportunities}>
-                                </lightning-button>
-                            </td>
-                        </tr>
-                    </template>
-                </tbody>
-            </table>
+            <lightning-datatable
+                key-field="Id"
+                data={paginatedAccounts}
+                columns={columns}
+                hide-checkbox-column
+                onrowaction={handleRowAction}
+            ></lightning-datatable>
 
             <!-- Pagination Controls -->
             <div class="slds-m-top_medium slds-grid slds-grid_align-center">

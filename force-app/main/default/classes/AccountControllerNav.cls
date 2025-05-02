@@ -11,7 +11,7 @@ public class AccountControllerNav {
         return [SELECT Id, Name, StageName, Amount FROM Opportunity WHERE AccountId = :accountId];
     }
     
-	@AuraEnabled(cacheable=true)
+	@AuraEnabled
     public static List<String> getStageNamePicklistValues() {
         // Retrieve the picklist values for StageName
         List<String> stageValues = new List<String>();

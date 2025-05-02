@@ -1,0 +1,84 @@
+<template>
+    <div class="slds-p-around_medium slds-grid slds-gutters">
+        <div class="slds-col slds-size_1-of-1">
+            <lightning-input
+                type="search"
+                label="Search Accounts"
+                onchange={handleSearch}
+                value={searchTerm}
+                variant="label-hidden"
+                placeholder="Search by Name, Phone, Industry, or Rating..."
+                class="search-input">
+            </lightning-input>
+        </div>
+    </div>
+
+    <div class="slds-p-around_medium">
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+        </template>
+        
+        <template if:false={hasRecords}>
+            <div class="slds-text-align_center slds-p-around_medium">
+                No records found.
+            </div>
+        </template>
+
+        <template if:true={hasRecords}>
+            <div class="table-container">
+                <lightning-datatable
+                    key-field="Id"
+                    data={filteredAccounts}
+                    columns={columns}
+                    hide-checkbox-column
+                    draft-values={draftValues}
+                    oncellchange={handleCellChange}
+                    onsave={handleSave}
+                    suppress-bottom-bar="true">
+                </lightning-datatable>
+            </div>
+        </template>
+    </div>
+
+    <div class="footer-button-container">
+        <lightning-button 
+            label="Save Changes" 
+            variant="brand" 
+            onclick={handleSaveClick}
+            disabled={isSaveDisabled}>
+        </lightning-button>
+    </div>
+
+    <template if:true={showConfirmDialog}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open modal-container">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium">Confirm Changes</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <div class="slds-text-heading_small">The following changes will be saved:</div>
+                    <ul class="slds-p-around_medium">
+                        <template for:each={changedFields} for:item="change">
+                            <li key={change.id} class="slds-p-bottom_x-small">
+                                <strong>{change.field}:</strong> {change.oldValue} → {change.newValue}
+                            </li>
+                        </template>
+                    </ul>
+                </div>
+                <footer class="slds-modal__footer modal-footer">
+                    <lightning-button 
+                        label="Cancel" 
+                        onclick={closeModal} 
+                        class="slds-m-right_x-small">
+                    </lightning-button>
+                    <lightning-button 
+                        label="Save" 
+                        variant="brand" 
+                        onclick={saveChanges}>
+                    </lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

@@ -1,0 +1,73 @@
+<template>
+    <template if:true={metadataList}>
+        <div class="slds-grid slds-wrap">
+            <template for:each={metadataList} for:item="field">
+                <div key={field.apiName} class="slds-col slds-size_1-of-2 slds-p-around_small">
+                    <template if:true={field.isText}>
+                        <lightning-input
+                            label={field.fieldLabel}
+                            required={field.required}
+                            data-id={field.apiName}
+                            data-object={field.objectName}
+                            data-field-type={field.fieldType}>
+                        </lightning-input>
+                    </template>
+
+                    <template if:true={field.isDate}>
+                        <lightning-input
+                            label={field.fieldLabel}
+                            type="date"
+                            required={field.required}
+                            data-id={field.apiName}
+                            data-object={field.objectName}
+                            data-field-type={field.fieldType}>
+                        </lightning-input>
+                    </template>
+
+                    <template if:true={field.isNumber}>
+                        <lightning-input
+                            label={field.fieldLabel}
+                            type="number"
+                            required={field.required}
+                            data-id={field.apiName}
+                            data-object={field.objectName}
+                            data-field-type={field.fieldType}>
+                        </lightning-input>
+                    </template>
+
+                    <template if:true={field.isPicklist}>
+                        <lightning-combobox
+                            label={field.fieldLabel}
+                            options={field.picklistValues}
+                            required={field.required}
+                            data-id={field.apiName}
+                            data-object={field.objectName}
+                            data-field-type={field.fieldType}>
+                        </lightning-combobox>
+                    </template>
+
+                    <template if:true={field.isRadio}>
+                        <lightning-radio-group
+                            label={field.fieldLabel}
+                            options={field.radioOptions}
+                            required={field.required}
+                            type="radio"
+                            data-id={field.apiName}
+                            data-object={field.objectName}
+                            data-field-type={field.fieldType}>
+                        </lightning-radio-group>
+                    </template>
+                </div>
+            </template>
+        </div>
+    </template>
+
+    <div class="slds-m-around_medium">
+        <lightning-button
+            variant="brand"
+            label="Submit"
+            onclick={handleSubmit}
+            class="slds-m-top_medium">
+        </lightning-button>
+    </div>
+</template>

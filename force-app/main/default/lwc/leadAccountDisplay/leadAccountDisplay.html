@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Related Account & Opportunities">
+        <!-- Account Name as Clickable Link -->
+        <template if:true={accountName}>
+            <p class="slds-m-around_medium">
+                <strong>Account: </strong>
+                <a href={accountUrl} target="_blank">{accountName}</a>
+            </p>
+        </template>
+ 
+        <!-- Related Opportunities Table -->
+        <template if:true={opportunities.length}>
+            <div class="slds-m-around_medium">
+                <lightning-datatable
+                    key-field="id"
+                    data={opportunities}
+                    columns={columns}
+                    hide-checkbox-column="true">
+                </lightning-datatable>
+            </div>
+        </template>
+ 
+        <!-- Show Error If Any -->
+        <template if:true={error}>
+            <p class="slds-m-around_medium slds-text-color_error">Error: {error}</p>
+        </template>
+    </lightning-card>
+</template>
+ 
+ 

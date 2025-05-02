@@ -1,0 +1,83 @@
+<template>
+    <lightning-card title="Dynamic Form">
+        <template if:true={metadataList}>
+            <lightning-layout multiple-rows>
+                <template for:each={metadataList} for:item="field">
+                    <lightning-layout-item key={field.fieldName} size="12" padding="around-small">
+                        
+                        <!-- Text Input -->
+                        <template if:true={field.isString}>
+                            <lightning-input 
+                                type="text" 
+                                label={field.fieldLabel} 
+                                data-id={field.fieldName} 
+                                onchange={handleInputChange}>
+                            </lightning-input>
+                        </template>
+
+                        <!-- Checkbox -->
+                        <template if:true={field.isBoolean}>
+                            <lightning-input 
+                                type="checkbox" 
+                                label={field.fieldLabel} 
+                                data-id={field.fieldName} 
+                                onchange={handleInputChange}>
+                            </lightning-input>
+                        </template>
+
+                        <!-- Date -->
+                        <template if:true={field.isDate}>
+                            <lightning-input 
+                                type="date" 
+                                label={field.fieldLabel} 
+                                data-id={field.fieldName} 
+                                onchange={handleInputChange}>
+                            </lightning-input>
+                        </template>
+
+                        <!-- DateTime -->
+                        <template if:true={field.isDateTime}>
+                            <lightning-input 
+                                type="datetime-local" 
+                                label={field.fieldLabel} 
+                                data-id={field.fieldName} 
+                                onchange={handleInputChange}>
+                            </lightning-input>
+                        </template>
+
+                        <!-- Picklist -->
+                        <template if:true={field.isPicklist}>
+                            <lightning-combobox 
+                                label={field.fieldLabel} 
+                                data-id={field.fieldName} 
+                                options={field.picklistOptions} 
+                                onchange={handleInputChange}>
+                            </lightning-combobox>
+                        </template>
+
+                        <!-- TextArea -->
+                        <template if:true={field.isTextarea}>
+                            <lightning-textarea 
+                                label={field.fieldLabel} 
+                                data-id={field.fieldName} 
+                                onchange={handleInputChange}>
+                            </lightning-textarea>
+                        </template>
+
+                    </lightning-layout-item>
+                </template>
+            </lightning-layout>
+
+            <lightning-button 
+                variant="brand" 
+                label="Submit" 
+                onclick={handleSubmit} 
+                class="slds-m-top_medium">
+            </lightning-button>
+        </template>
+
+        <template if:false={metadataList}>
+            <p>Loading metadata...</p>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,34 @@
+
+.table-container {
+    margin-bottom: 80px; 
+}
+
+.footer-button-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 10px 20px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    border-radius: 4px;
+}
+
+.search-input {
+    margin-bottom: 12px;
+}
+
+.modal-container {
+    z-index: 9002; /* Higher than footer button */
+}
+
+.modal-footer {
+    position: relative;
+    z-index: 9003; /* Higher than modal container */
+}
+
+
+.slds-modal__container {
+    margin-bottom: 80px;
+}

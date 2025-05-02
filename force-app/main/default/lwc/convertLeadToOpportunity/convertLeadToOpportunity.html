@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Convert Lead to Opportunity">
+        <div class="slds-m-around_medium">
+            <lightning-button 
+                label="Convert Lead" 
+                variant="brand" 
+                onclick={handleConvertLead} 
+                disabled={isConverting}>
+            </lightning-button>
+            <template if:true={isConverting}>
+                <lightning-spinner alternative-text="Converting Lead"></lightning-spinner>
+            </template>
+            <template if:true={message}>
+                <p class="slds-m-top_medium">{message}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
